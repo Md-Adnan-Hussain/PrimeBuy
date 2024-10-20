@@ -15,9 +15,9 @@ function Filters() {
   };
 
   return (
-    <div className="filter_menu">
-      <div className="row">
-        <div className="row sort">
+    <div className="filter_menu row gx-0">
+      <div className="col-2">
+        <div className="sort d-flex justify-content-between align-items-center">
           <span>Sort By: </span>
           <select
             value={sort}
@@ -39,22 +39,24 @@ function Filters() {
         placeholder="Enter your search!"
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
         style={{ borderRadius: "0.5rem" }}
+        className="col-8"
       />
-
-      <span>Filters: &nbsp;</span>
-      <select
-        name="category"
-        value={category}
-        onChange={handleCategory}
-        style={{ borderRadius: "0.5rem" }}
-      >
-        <option value="">All Products</option>
-        {categories.map((category) => (
-          <option value={"category=" + category._id} key={category._id}>
-            {category.name}
-          </option>
-        ))}
-      </select>
+      <div className="col-2 d-flex justify-content-between align-items-center">
+        <span>Filters: &nbsp;</span>
+        <select
+          name="category"
+          value={category}
+          onChange={handleCategory}
+          style={{ borderRadius: "0.5rem" }}
+        >
+          <option value="">All Products</option>
+          {categories.map((category) => (
+            <option value={"category=" + category._id} key={category._id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }

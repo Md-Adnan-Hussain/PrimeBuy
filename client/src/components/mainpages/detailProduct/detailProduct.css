@@ -24,6 +24,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.box-detail span {
+  color: white;
+}
 .box-detail h2 {
   text-transform: uppercase;
   color: #bc072b;
